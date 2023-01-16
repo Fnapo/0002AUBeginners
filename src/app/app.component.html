@@ -26,8 +26,9 @@
 </div>
 <div class="mibody overflow-auto">
 	<app-card-curso
-		*ngFor="let curso of cursos"
+		*ngFor="let curso of cursos; index as i"
 		[curso]="curso"
+		[indexCurso]="i + 1"
 		(cursoSeleccionado)="OnCursoSeleccionado($event)"
 	></app-card-curso>
 </div>

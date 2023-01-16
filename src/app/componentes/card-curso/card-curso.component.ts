@@ -9,6 +9,8 @@ import { Curso } from '../../modelos/interfaces/curso';
 export class CardCursoComponent {
 	@Input()
 	curso!: Curso;
+	@Input()
+	indexCurso = 0;
 
 	@Output()
 	cursoSeleccionado = new EventEmitter<Curso>();

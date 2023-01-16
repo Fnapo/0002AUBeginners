@@ -1,8 +1,14 @@
-<div class="container d-flex justify-content-center">
+<div
+	class="container d-flex justify-content-center"
+	*ngIf="curso; else cursoVacio"
+>
 	<div class="col-10 col-md-6 card text-black bg-white shadow mb-4">
-		<div class="card-body">
+		<div
+			class="card-body"
+			[ngClass]="{ beginner: curso.category === 'BEGINNER' }"
+		>
 			<h4 class="card-title text-center fw-bold">
-				{{ curso.description }}
+				{{ indexCurso + " " + curso.description }}
 			</h4>
 			<img
 				class="card-img-bottom"
@@ -22,3 +28,10 @@
 		</div>
 	</div>
 </div>
+<ng-template #cursoVacio>
+	<div class="container mb-4 d-flex justify-content-center">
+		<div class="col-10 col-md-6 text-black bg-white">
+			<h4 class="text-center">Curso indefenido o nulo ...</h4>
+		</div>
+	</div>
+</ng-template>

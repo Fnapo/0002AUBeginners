@@ -1,7 +1,6 @@
 
 
 export const CURSOS: any[] = [
-
 	{
 		id: 1,
 		description: "Angular Core Deep Dive",
